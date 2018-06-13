@@ -52,7 +52,7 @@ const BossActions = {
         2000: {
             1201144914: {msg: 'Spin ↓'},
             1201145914: {msg: 'Spin ↓'}, // rage
-            1201147027: {msg: 'Red, Out safe ↓'},
+            1201146927: {msg: 'Red, Out safe ↓'},
             1201147028: {msg: 'Blue, In safe ↑'},    
         },
         // Third Boss HM
