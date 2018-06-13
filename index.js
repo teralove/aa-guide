@@ -178,6 +178,7 @@ module.exports = function antaroth_guide(dispatch) {
         {
             hook('S_ACTION_STAGE', 5, (event) => {              
                 if (!enabled) return;                
+                if (!bossInfo) return;
                 /*Optimization Todo: Skip players, only continue if boss is performing action*/
                 
                 let bossAction = BossActions[bossInfo.huntingZoneId][bossInfo.templateId][event.skill];
