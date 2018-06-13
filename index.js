@@ -78,7 +78,6 @@ const BossActions = {
 module.exports = function antaroth_guide(dispatch) {
 	const command = Command(dispatch);
 	let hooks = [],
-        sendToParty = false,
         enabled = true,
         insidemap = false,
         streamenabled = false,
@@ -132,14 +131,7 @@ module.exports = function antaroth_guide(dispatch) {
         else if(arg.toLowerCase() === "stream")
         {
             streamenabled = !streamenabled;
-            sendToParty = false;
             command.message((streamenabled ? 'Stream mode Enabled' : 'Stream mode Disabled'));
-        }
-        else if(arg.toLowerCase() === "toparty")
-        {
-            streamenabled = false;
-            sendToParty = !sendToParty;
-            command.message((sendToParty ? 'Antaroth Guide - Messages will be sent to the party' : 'Antaroth Guide - Only you will see messages in chat'));
         }
         else if(arg.toLowerCase() === "tank")
         {
@@ -150,14 +142,7 @@ module.exports = function antaroth_guide(dispatch) {
 	
 	function sendMessage(msg)
 	{
-		if (sendToParty) 
-		{
-			dispatch.toServer('C_CHAT', 1, {
-			channel: 21, //21 = p-notice, 1 = party, 2 = guild
-			message: msg
-			});
-		}
-		else if(streamenabled) 
+		if(streamenabled) 
 		{
 			command.message(msg);
 		}
