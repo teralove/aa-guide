@@ -144,7 +144,7 @@ module.exports = function antaroth_guide(dispatch) {
         else if(arg.toLowerCase() === "tank")
         {
             isTank = !isTank;
-            command.message('Antaroth Guide - Tank Mmde '+(enabled ? 'Enabled' : 'Disabled') + '.');
+            command.message('Antaroth Guide - Tank Mmde '+(isTank ? 'Enabled' : 'Disabled') + '.');
         }
     });
 	
