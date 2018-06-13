@@ -5,8 +5,6 @@ Credits to teralove and soler91 and SHINOYX for their guides
 
 Call out attacks for all bosses including both NORMAL MODE & HARD MODE
 
-*Script automatically detects bosses and which dungeon hard or normal.
-
 Please report any issues to me either here or on discord :)
 
 # Commands 
