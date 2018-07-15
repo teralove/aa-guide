@@ -88,11 +88,7 @@ module.exports = function antaroth_guide(dispatch) {
         let job = (event.templateId - 10101) % 100;
         isTank = (job === 1 || job === 10) ? true : false;
     });
-    
-    dispatch.hook('C_MEET_BOSS_INFO', 1, (event) => {
-        bossInfo = event;
-    });
-    
+
     dispatch.hook('S_LOAD_TOPO', 1, (event) => {
         if (event.zone === mapID[0]) 
         {								
@@ -161,11 +157,15 @@ module.exports = function antaroth_guide(dispatch) {
     {
         if(!hooks.length)
         {
+            hook('S_BOSS_GAGE_INFO', 3, (event) => {
+                bossInfo = event;
+            });
+            
             hook('S_ACTION_STAGE', 5, (event) => {              
                 if (!enabled) return;                
                 if (!bossInfo) return;
+                if (!event.gameId.equals(bossInfo.id)) return;
                 if (!BossActions[bossInfo.huntingZoneId] || !BossActions[bossInfo.huntingZoneId][bossInfo.templateId]) return;
-                /*Optimization Todo: Skip players, only continue if boss is performing action*/
                 
                 let bossAction = BossActions[bossInfo.huntingZoneId][bossInfo.templateId][event.skill];
                 if (bossAction) 
