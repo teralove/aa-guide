@@ -9,71 +9,65 @@ const BossActions = {
     720: {
         // First Boss
         1000: {
-            1188037724: {msg: 'Out ↓ In ↑'},
-            1188038724: {msg: 'Out ↓ In ↑'}, // rage
-            1188037725: {msg: 'In ↑ Out ↓'},
-            1188038725: {msg: 'In ↑ Out ↓'}, // rage
-            1188037908: {msg: 'Delete soon', deletionTimer: true}, // 'Your flesh will be deleted!'
+            1116: {msg: 'Out ↓ In ↑'},
+            2116: {msg: 'Out ↓ In ↑'}, // rage
+            1117: {msg: 'In ↑ Out ↓'},
+            2117: {msg: 'In ↑ Out ↓'}, // rage
+            1300: {msg: 'Delete soon', deletionTimer: true}, // 'Your flesh will be deleted!'
         },
         // Second Boss NM
         2000: {
             // Second Boss NM
-            1188037714: {msg: 'Spin ↓'},
-            1188038714: {msg: 'Spin ↓'}, // rage
-            1188039727: {msg: 'Red, Out safe ↓'},
-            1188039828: {msg: 'Blue, In safe ↑'},   
+            1106: {msg: 'Spin ↓'},
+            2106: {msg: 'Spin ↓'}, // rage
+            3119: {msg: 'Red, Out safe ↓'},
+            3220: {msg: 'Blue, In safe ↑'},   
         },
         // Third Boss NM
         3000: {
             // Third Boss NM
-            1188037721: {msg: 'Front, Back stun ↓'},
-            1188038721: {msg: 'Front, Back stun ↓'}, // rage
-            1188037719: {msg: '→ Right Safe →', msgForTanks: '← Left Safe ←'},
-            1188038719: {msg: '→ Right Safe →', msgForTanks: '← Left Safe ←'}, // rage
-            1188037717: {msg: '← Left Safe ←',  msgForTanks: '→ Right Safe →'},
-            1188038717: {msg: '← Left Safe ←',  msgForTanks: '→ Right Safe →'}, // rage
-            1188037712: {msg: 'Back stun ↓', checkTwoUp: true},
-            1188038712: {msg: 'Back stun ↓', checkTwoUp: true}, // rage            
+            1113: {msg: 'Front, Back stun ↓'},
+            2113: {msg: 'Front, Back stun ↓'}, // rage
+            1111: {msg: '→ Right Safe →', msgForTanks: '← Left Safe ←'},
+            2111: {msg: '→ Right Safe →', msgForTanks: '← Left Safe ←'}, // rage
+            1109: {msg: '← Left Safe ←',  msgForTanks: '→ Right Safe →'},
+            2109: {msg: '← Left Safe ←',  msgForTanks: '→ Right Safe →'}, // rage
+            1104: {msg: 'Back stun ↓', checkTwoUp: true},
+            2104: {msg: 'Back stun ↓', checkTwoUp: true}, // rage            
         }
     },
     // Hard Mode
     920: {
         // First Boss HM
         1000: {
-            1201144938: {msg: 'In ↑ Out ↓'}, // (big aoe)
-            1201145938: {msg: 'Out ↓ In ↑'}, // (big aoe) rage
-            1201144924: {msg: 'Out ↓ In ↑'},
-            1201145924: {msg: 'Out ↓ In ↑'}, // rage
-            1201144925: {msg: 'In ↑ Out ↓'},
-            1201145925: {msg: 'In ↑ Out ↓'}, // rage
-            1201145108: {msg: 'Delete soon', deletionTimer: true},
+            1130: {msg: 'In ↑ Out ↓'}, // (big aoe)
+            2130: {msg: 'Out ↓ In ↑'}, // (big aoe) rage
+            1116: {msg: 'Out ↓ In ↑'},
+            2116: {msg: 'Out ↓ In ↑'}, // rage
+            1117: {msg: 'In ↑ Out ↓'},
+            2117: {msg: 'In ↑ Out ↓'}, // rage
+            1300: {msg: 'Delete soon', deletionTimer: true},
         },
         // Second Boss HM
         2000: {
-            1201144914: {msg: 'Spin ↓'},
-            1201145914: {msg: 'Spin ↓'}, // rage
-            1201146927: {msg: 'Red, Out safe ↓'},
-            1201147028: {msg: 'Blue, In safe ↑'},    
+            1106: {msg: 'Spin ↓'},
+            2106: {msg: 'Spin ↓'}, // rage
+            3119: {msg: 'Red, Out safe ↓'},
+            3220: {msg: 'Blue, In safe ↑'},    
         },
         // Third Boss HM
         3000: {
-            1201144921: {msg: 'Front, back stun ↓'},
-            1201145921: {msg: 'Front, back stun ↓'}, // rage
-            1201144919: {msg: '→ Right Safe, OUT safe', msgForTanks: '← Left Safe, OUT safe'},
-            1201145919: {msg: '→ Right Safe, OUT safe', msgForTanks: '← Left Safe, OUT safe'}, // rage
-            1201144917: {msg: '← Left Safe, IN safe',   msgForTanks: '→ Right Safe, IN safe'},
-            1201145917: {msg: '← Left Safe, IN safe',   msgForTanks: '→ Right Safe, IN safe'}, // rage
-            1201144912: {msg: 'Back stun ↓', checkTwoUp: true}, // HM
-            1201145912: {msg: 'Back stun ↓', checkTwoUp: true} // HM Rage
+            1113: {msg: 'Front, back stun ↓'},
+            2113: {msg: 'Front, back stun ↓'}, // rage
+            1111: {msg: '→ Right Safe, OUT safe', msgForTanks: '← Left Safe, OUT safe'},
+            2111: {msg: '→ Right Safe, OUT safe', msgForTanks: '← Left Safe, OUT safe'}, // rage
+            1109: {msg: '← Left Safe, IN safe',   msgForTanks: '→ Right Safe, IN safe'},
+            2109: {msg: '← Left Safe, IN safe',   msgForTanks: '→ Right Safe, IN safe'}, // rage
+            1104: {msg: 'Back stun ↓', checkTwoUp: true}, // HM
+            2104: {msg: 'Back stun ↓', checkTwoUp: true} // HM Rage
         }
     }
 };
-/*const ToTest = {						// Third Boss Attack Actions
-	1188037809: {msg: 'Red Aura ↓'},
-	1188038716: {msg: 'Red Thrust ↓'},
-	1201145009: {msg: 'Red Aura ↓'}, // HM
-	1201144916: {msg: 'Red Thrust ↓'} // HM
-};*/
 
 module.exports = function antaroth_guide(dispatch) {
 	const command = Command(dispatch);
@@ -89,7 +83,7 @@ module.exports = function antaroth_guide(dispatch) {
         isTank = (job === 1 || job === 10) ? true : false;
     });
 
-    dispatch.hook('S_LOAD_TOPO', 1, (event) => {
+    dispatch.hook('S_LOAD_TOPO', 3, (event) => {
         if (event.zone === mapID[0]) 
         {								
             if (!insidemap) command.message('Welcome to Antaroth - Normal Mode');
@@ -112,17 +106,17 @@ module.exports = function antaroth_guide(dispatch) {
         if (arg === undefined) {
             //if(!insidemap) { command.message('You must be inside Antaroth'); return; }
             enabled = !enabled;
-            command.message('Antaroth Guide '+(enabled ? 'Enabled' : 'Disabled') + '.');
+            command.message((enabled ? 'Enabled' : 'Disabled') + '.');
         }
         else if(arg.toLowerCase() === "off")
         {
             enabled = false;
-            command.message('Antaroth Guide '+(enabled ? 'Enabled' : 'Disabled') + '.');
+            command.message((enabled ? 'Enabled' : 'Disabled') + '.');
         }
         else if(arg.toLowerCase() === "on")
         {
             enabled = true;
-            command.message('Antaroth Guide '+(enabled ? 'Enabled' : 'Disabled') + '.');
+            command.message((enabled ? 'Enabled' : 'Disabled') + '.');
         }
         else if(arg.toLowerCase() === "stream")
         {
@@ -132,7 +126,7 @@ module.exports = function antaroth_guide(dispatch) {
         else if(arg.toLowerCase() === "tank")
         {
             isTank = !isTank;
-            command.message('Antaroth Guide - Tank Mmde '+(isTank ? 'Enabled' : 'Disabled') + '.');
+            command.message('Tank Mode '+(isTank ? 'Enabled' : 'Disabled') + '.');
         }
     });
 	
@@ -161,13 +155,13 @@ module.exports = function antaroth_guide(dispatch) {
                 bossInfo = event;
             });
             
-            hook('S_ACTION_STAGE', 5, (event) => {              
+            hook('S_ACTION_STAGE', 7, (event) => {              
                 if (!enabled) return;                
                 if (!bossInfo) return;
                 if (!event.gameId.equals(bossInfo.id)) return;
                 if (!BossActions[bossInfo.huntingZoneId] || !BossActions[bossInfo.huntingZoneId][bossInfo.templateId]) return;
                 
-                let bossAction = BossActions[bossInfo.huntingZoneId][bossInfo.templateId][event.skill];
+                let bossAction = BossActions[bossInfo.huntingZoneId][bossInfo.templateId][event.skill.id];
                 if (bossAction) 
                 {
                     if (bossAction.deletionTimer) 
@@ -181,7 +175,7 @@ module.exports = function antaroth_guide(dispatch) {
                         let now = Date.now();
                         if((now - lasttwoup) < 3000) // usually <2350
                         {
-                            sendMessage(bossAction.msg /* + " : " + String(now - lasttwoup)*/ );
+                            sendMessage(bossAction.msg);
                         }
                         lasttwoup = now;
                     }
@@ -194,17 +188,6 @@ module.exports = function antaroth_guide(dispatch) {
                         sendMessage(bossAction.msg);
                     }
                 }
-				/*else if (ToTest[event.skill])
-				{
-					sendMessage(ToTest[event.skill].msg);
-					var today = new Date();
-					var h = today.getHours();
-					var m = today.getMinutes();
-					var s = today.getSeconds();
-					command.message(h + ":" + m + ":" + s + " - " + String(event.skill));
-					console.log(h + ":" + m + ":" + s + " - " + JSON.stringify(event, null, 4));
-					console.log(ToTest[event.skill].msg);
-				}*/
             });
         }
     }
@@ -220,4 +203,5 @@ module.exports = function antaroth_guide(dispatch) {
 	function hook() {
 		hooks.push(dispatch.hook(...arguments))
 	}
+    
 }
