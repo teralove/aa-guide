@@ -25,7 +25,3 @@ SCRIPT BY OWYN - For TERA. Updated by teralove
   - Back Stun
   - Right Safe, OUT safe
   - Left Safe, IN safe
-
-# Notes
-- If you get error: **unrecognized hook target C_MEET_BOSS_INFO<1>** then [download the map files from meishuu's repo](https://github.com/meishuu/tera-data/tree/master/map) and add them to your proxy's tera-data. "CaaliTeraProxy\node_modules\tera-data\map"
-- To change/localize/remove any message - edit index.js with notepad
