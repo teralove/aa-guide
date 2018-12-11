@@ -1,6 +1,5 @@
 /* Usable Sysbols ◎●←↑→↓↖↗↘↙ */
 
-const Command = require('command');
 const mapID = [9720, 9920];					// MAP ID to input [ Normal Mode , Hard Mode ]
 
 // BossAction[HuntingZoneId][TempalateId][Skill]
@@ -70,7 +69,7 @@ const BossActions = {
 };
 
 module.exports = function antaroth_guide(dispatch) {
-	const command = Command(dispatch);
+
 	let hooks = [],
         enabled = true,
         insidemap = false,
@@ -86,12 +85,12 @@ module.exports = function antaroth_guide(dispatch) {
     dispatch.hook('S_LOAD_TOPO', 3, (event) => {
         if (event.zone === mapID[0]) 
         {								
-            if (!insidemap) command.message('Welcome to Antaroth - Normal Mode');
+            if (!insidemap) dispatch.command.message('Welcome to Antaroth - Normal Mode');
             insidemap = true;
             load();
         } 
         else if (event.zone === mapID[1]) {
-            if (!insidemap) command.message('Welcome to Antaroth - Hard Mode');
+            if (!insidemap) dispatch.command.message('Welcome to Antaroth - Hard Mode');
             insidemap = true;
             load();
         } 
@@ -102,31 +101,32 @@ module.exports = function antaroth_guide(dispatch) {
         }
     });
 	
-    command.add('aaguide', (arg) => {
+    dispatch.command.add('aaguide', (arg) => {
+        if (arg) arg = arg.toLowerCase();
         if (arg === undefined) {
             //if(!insidemap) { command.message('You must be inside Antaroth'); return; }
             enabled = !enabled;
-            command.message((enabled ? 'Enabled' : 'Disabled') + '.');
+            dispatch.command.message((enabled ? 'Enabled' : 'Disabled') + '.');
         }
-        else if(arg.toLowerCase() === "off")
+        else if(arg === "off")
         {
             enabled = false;
-            command.message((enabled ? 'Enabled' : 'Disabled') + '.');
+            dispatch.command.message((enabled ? 'Enabled' : 'Disabled') + '.');
         }
-        else if(arg.toLowerCase() === "on")
+        else if(arg === "on")
         {
             enabled = true;
-            command.message((enabled ? 'Enabled' : 'Disabled') + '.');
+            dispatch.command.message((enabled ? 'Enabled' : 'Disabled') + '.');
         }
-        else if(arg.toLowerCase() === "stream")
+        else if(arg === "stream")
         {
             streamenabled = !streamenabled;
-            command.message((streamenabled ? 'Stream mode Enabled' : 'Stream mode Disabled'));
+            dispatch.command.message((streamenabled ? 'Stream mode Enabled' : 'Stream mode Disabled'));
         }
-        else if(arg.toLowerCase() === "tank")
+        else if(arg === "tank")
         {
             isTank = !isTank;
-            command.message('Tank Mode '+(isTank ? 'Enabled' : 'Disabled') + '.');
+            dispatch.command.message('Tank Mode '+(isTank ? 'Enabled' : 'Disabled') + '.');
         }
     });
 	
@@ -134,7 +134,7 @@ module.exports = function antaroth_guide(dispatch) {
 	{
 		if(streamenabled) 
 		{
-			command.message(msg);
+			dispatch.command.message(msg);
 		}
 		else 
 		{

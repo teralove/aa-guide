@@ -1,8 +1,5 @@
 # AA-Guide
-
-Call out attacks for all bosses including both NORMAL MODE & HARD MODE
-
-SCRIPT BY OWYN - For TERA. Updated by teralove
+Guide for Antaroth's Abyss
 
 # Commands 
 - **aaguide** - toggle module off/on (DEFAULT: ON)
