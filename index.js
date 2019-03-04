@@ -158,7 +158,7 @@ module.exports = function antaroth_guide(dispatch) {
             hook('S_ACTION_STAGE', 7, (event) => {              
                 if (!enabled) return;                
                 if (!bossInfo) return;
-                if (!event.gameId.equals(bossInfo.id)) return;
+                if (event.gameId != (bossInfo.id)) return;
                 if (!BossActions[bossInfo.huntingZoneId] || !BossActions[bossInfo.huntingZoneId][bossInfo.templateId]) return;
                 
                 let bossAction = BossActions[bossInfo.huntingZoneId][bossInfo.templateId][event.skill.id];

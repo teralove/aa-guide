@@ -6,6 +6,6 @@
     "options": {
         "niceName": "AA Guide"
     },
-    "servers": ["https://raw.githubusercontent.com/teralove/aa-guide/master/"],
-    "supportUrl": "https://github.com/teralove/aa-guide/issues"  
+    "servers": ["https://raw.githubusercontent.com/teralove/guide-aa/master/"],
+    "supportUrl": "https://github.com/teralove/guide-aa/issues"  
 }
