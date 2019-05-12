@@ -1,6 +1,6 @@
 /* Usable Sysbols ◎●←↑→↓↖↗↘↙ */
 
-const mapID = [9720, 9920];					// MAP ID to input [ Normal Mode , Hard Mode ]
+const mapID = [9720, 9920, 3017];					// MAP ID to input [ Normal Mode , Hard Mode , 7 Man ]
 
 // BossAction[HuntingZoneId][TempalateId][Skill]
 const BossActions = {
@@ -65,6 +65,37 @@ const BossActions = {
             1104: {msg: 'Back stun ↓', checkTwoUp: true}, // HM
             2104: {msg: 'Back stun ↓', checkTwoUp: true} // HM Rage
         }
+    },
+    // 7 Man
+    3017: {
+        // First Boss 7man
+        1000: {
+            1130: {msg: 'In ↑ Out ↓'}, // (big aoe)
+            2130: {msg: 'Out ↓ In ↑'}, // (big aoe) rage
+            1116: {msg: 'Out ↓ In ↑'},
+            2116: {msg: 'Out ↓ In ↑'}, // rage
+            1117: {msg: 'In ↑ Out ↓'},
+            2117: {msg: 'In ↑ Out ↓'}, // rage
+            1300: {msg: 'Delete soon', deletionTimer: true},
+        },
+        // Second Boss 7man
+        2000: {
+            1106: {msg: 'Spin ↓'},
+            2106: {msg: 'Spin ↓'}, // rage
+            3119: {msg: 'Red, Out safe ↓'},
+            3220: {msg: 'Blue, In safe ↑'},    
+        },
+        // Third Boss 7man
+        3000: {
+            1113: {msg: 'Front, back stun ↓'},
+            2113: {msg: 'Front, back stun ↓'}, // rage
+            1111: {msg: '→ Right Safe, OUT safe', msgForTanks: '← Left Safe, OUT safe'},
+            2111: {msg: '→ Right Safe, OUT safe', msgForTanks: '← Left Safe, OUT safe'}, // rage
+            1109: {msg: '← Left Safe, IN safe',   msgForTanks: '→ Right Safe, IN safe'},
+            2109: {msg: '← Left Safe, IN safe',   msgForTanks: '→ Right Safe, IN safe'}, // rage
+            1104: {msg: 'Back stun ↓', checkTwoUp: true}, // HM
+            2104: {msg: 'Back stun ↓', checkTwoUp: true} // HM Rage
+        }
     }
 };
 
@@ -77,20 +108,25 @@ module.exports = function antaroth_guide(dispatch) {
         isTank = false,
         bossInfo = undefined;
 
-    dispatch.hook('S_LOGIN', 10, (event) => {
-        let job = (event.templateId - 10101) % 100;
+    dispatch.game.on('enter_game', () => { 
+        let job = (dispatch.game.me.templateId - 10101) % 100;
         isTank = (job === 1 || job === 10) ? true : false;
-    });
+    })
 
-    dispatch.hook('S_LOAD_TOPO', 3, (event) => {
-        if (event.zone === mapID[0]) 
+dispatch.game.me.on('change_zone', (zone, quick) => {     
+        if (zone === mapID[0]) 
         {								
             if (!insidemap) dispatch.command.message('Welcome to Antaroth - Normal Mode');
             insidemap = true;
             load();
         } 
-        else if (event.zone === mapID[1]) {
+        else if (zone === mapID[1]) {
             if (!insidemap) dispatch.command.message('Welcome to Antaroth - Hard Mode');
+            insidemap = true;
+            load();
+        } 
+        else if (zone === mapID[2]) {
+            if (!insidemap) dispatch.command.message('Welcome to Antaroth - 7 Person');
             insidemap = true;
             load();
         } 
@@ -101,7 +137,7 @@ module.exports = function antaroth_guide(dispatch) {
         }
     });
 	
-    dispatch.command.add('aaguide', (arg) => {
+    dispatch.command.add(['aa', 'aaguide'], (arg) => {
         if (arg) arg = arg.toLowerCase();
         if (arg === undefined) {
             //if(!insidemap) { command.message('You must be inside Antaroth'); return; }
@@ -155,7 +191,7 @@ module.exports = function antaroth_guide(dispatch) {
                 bossInfo = event;
             });
             
-            hook('S_ACTION_STAGE', 7, (event) => {              
+            hook('S_ACTION_STAGE', 9, (event) => {              
                 if (!enabled) return;                
                 if (!bossInfo) return;
                 if (event.gameId != (bossInfo.id)) return;
